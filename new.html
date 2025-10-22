@@ -116,20 +116,23 @@
                      updating an image, or toggling a CSS class.
                 </p>
                 <div id="innerText">
-                    <h3> 1. innerText</h3>
+                    <h4> 1. innerText</h4>
                     <p>Represents visible text within 
                         an element (ignores hidden elements or extra spaces).
                     </p>
+                    <p id="p2">Takes into account CSS styling (hidden text is not returned).</p>
                 </div>
                 <div id="textContent">
-                    <h3>2. textContent</h3>
+                    <h4>2. textContent</h4>
                     <p>Represents all text content, including hidden elements.
                     </p>
+                    <p id="p3">Ignores CSS (shows hidden text too).</p>
                 </div>
                 <div id="innerHTML">
-                    <h3>3. innerHTML</h3>
+                    <h4>3. innerHTML</h4>
                     <p>Returns or replaces the HTML structure inside an element.
                     </p>
+                    <p id="p4">Ignores CSS (shows hidden text too).</p>
                 </div>
             </div>
             <div id="stylingWithJavaScript">
