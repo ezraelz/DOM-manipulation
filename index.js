@@ -119,19 +119,19 @@ const innerT = document.querySelector('#innerText');
 const innerH = document.querySelector('#innerHTML');
 const textC = document.querySelector('#textContent');
 
+const sec = document.querySelector('.sec');
+const hidT = document.querySelector('#innerText .hid');
+const hidTC = document.querySelector('#textContent .hid');
+const hidH = document.querySelector('#innerHTML .hid');
+
 // innerT
 const handleHoverInnerT = ()=> {
    innerT.style.marginLeft = '4em';
-   document.querySelector('#innerText h4').textContent = 'Example';
-   document.querySelector('#innerText p').innerHTML = '<p>const info = document.getElementById("info");</p>'
-   document.querySelector('#innerText #p2').innerHTML = '<p>console.log(info.innerText);  // Output: "Learning DOM"</p>'
-
+   hidT.style.display = 'block';
 }
 const handleLeaveInnerT = () => {
    innerT.style.marginLeft = '0';
-   const innerTheading = document.querySelector('#innerText h4').textContent = '1. innerText';
-   const innerTcontent2 = document.querySelector('#innerText p').innerHTML = '<p>Represents visible text within an element (ignores hidden elements or extra spaces).</p>';
-   document.querySelector('#innerText #p2').innerHTML = '<p>Takes into account CSS styling (hidden text is not returned).</p>'
+   hidT.style.display = 'none';
 };
 
 innerT.addEventListener('mouseover', handleHoverInnerT);
@@ -140,15 +140,11 @@ innerT.addEventListener('mouseout', handleLeaveInnerT);
 // textC
 const handleHoverTextC = ()=> {
    textC.style.marginLeft = '6em';
-   document.querySelector('#textContent h4').textContent = 'Example';
-   document.querySelector('#textContent p').innerHTML = '<p>const info = document.getElementById("info");</p>';
-   document.querySelector('#textContent #p3').innerHTML = '<p>console.log(info.innerText); // Output: "Learning DOM"</p>';
+   hidTC.style.display = 'block';
 }
 const handleLeaveTextC = () => {
    textC.style.marginLeft = '3em';
-   document.querySelector('#textContent h4').textContent = '2. textContent';
-   document.querySelector('#textContent p').innerHTML = 'Represents all text content, including hidden elements.'
-   document.querySelector('#textContent #p3').innerHTML = '<p>Ignores CSS (shows hidden text too).</p>';
+   hidTC.style.display = 'none';
 };
 
 textC.addEventListener('mouseover', handleHoverTextC);
@@ -157,16 +153,13 @@ textC.addEventListener('mouseout', handleLeaveTextC);
 // innerH
 const handleHoverInnerH = ()=> {
    innerH.style.marginLeft = '8em';
-   const innerTheading = document.querySelector('#innerHTML h4').textContent = 'Example';
-   const innerTcontent2 = document.querySelector('#innerHTML p').innerHTML = '<p>const info = document.getElementById("info");';
+   hidH.style.display = 'block';
 }
 const handleLeaveInnerH = () => {
    innerH.style.marginLeft = '6em';
-   const innerTheading = document.querySelector('#innerHTML h4').textContent = '3. innerHTML';
-   const innerTcontent2 = document.querySelector('#innerHTML p').innerHTML = 'Returns or replaces the HTML structure inside an element.'
+   hidH.style.display = 'none';
 };
 
 innerH.addEventListener('mouseover', handleHoverInnerH);
 innerH.addEventListener('mouseout', handleLeaveInnerH);
-
 

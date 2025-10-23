@@ -280,6 +280,20 @@ ul li a, h1 a, button a{
     border-radius: .7em;
     cursor: pointer;
     transition: all .4s ease-in-out;
+    display: flex;
+    flex-direction: row;
+}
+.sec{
+    padding: .5em;
+}
+.hid{
+    border-left: 1px solid #8a8a8a;
+    padding: .5em;
+    padding-left: 3em;
+    margin-left: 4em;
+    display: none;
+    transition: all .4s ease-in-out;
+    animation: transitLeft 1s 2s ease-in-out forwards;
 }
 #textContent{
     margin-left: 3em;
@@ -311,4 +325,12 @@ footer {
     background: #353434;
     color: white;
     padding: 1em;
+}
+
+@keyframes transitLeft{
+    0%{ 
+       transform: translateX(-4rem);
+    }100%{
+       transform: translateX(0);
+    }
 }
