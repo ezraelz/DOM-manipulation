@@ -275,7 +275,7 @@ ul li a, h1 a, button a{
     border-bottom: 1px solid #a5a5a5e0;
 }
 #innerText, #textContent, #innerHTML{
-    box-shadow: 0 0 8px #acacac;
+    box-shadow: 0 0 8px #dddcdc;
     padding: 1em;
     border-radius: .7em;
     cursor: pointer;
@@ -283,14 +283,39 @@ ul li a, h1 a, button a{
     display: flex;
     flex-direction: row;
 }
+.att{
+    padding: 1em;
+    border-radius: .7em;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+.attSec{
+    display: flex;
+    flex-direction: row;
+    align-items:safe;
+    justify-content:space-between;
+    overflow: hidden;
+}
+.attSec .hid{
+    margin-left: 1em;
+    padding-left: 1em;
+}
 .sec{
     padding: .5em;
 }
 .hid{
     border-left: 1px solid #8a8a8a;
     padding: .5em;
-    padding-left: 3em;
-    margin-left: 3em;
+    padding-left: 2em;
+    margin-left: 2em;
+    display: none;
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+}
+.atthid{
+    border-top: 1px solid #8a8a8a;
     display: none;
     transition: all .4s ease-in-out;
     overflow: hidden;

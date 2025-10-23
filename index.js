@@ -163,3 +163,15 @@ const handleLeaveInnerH = () => {
 innerH.addEventListener('mouseover', handleHoverInnerH);
 innerH.addEventListener('mouseout', handleLeaveInnerH);
 
+// attributes
+const setAtt = document.querySelector('#setAttribute');
+const hidAtt = document.querySelector('#setAttribute .atthid');
+
+const handleHoverSetAtt = ()=> {
+   hidAtt.style.display = 'block';
+}
+const handleLeaveSetAtt = () => {
+   hidAtt.style.display = 'none';
+};
+setAtt.addEventListener('mouseover', handleHoverSetAtt);
+setAtt.addEventListener('mouseleave', handleLeaveSetAtt)
