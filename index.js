@@ -126,7 +126,7 @@ const hidH = document.querySelector('#innerHTML .hid');
 
 // innerT
 const handleHoverInnerT = ()=> {
-   innerT.style.marginLeft = '4em';
+   innerT.style.marginLeft = '3em';
    hidT.style.display = 'block';
 }
 const handleLeaveInnerT = () => {

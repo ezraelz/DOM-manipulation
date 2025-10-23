@@ -290,7 +290,7 @@ ul li a, h1 a, button a{
     border-left: 1px solid #8a8a8a;
     padding: .5em;
     padding-left: 3em;
-    margin-left: 4em;
+    margin-left: 3em;
     display: none;
     transition: all .4s ease-in-out;
     overflow: hidden;
