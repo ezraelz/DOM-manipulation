@@ -30,7 +30,6 @@ nav h1{
 nav ul{
     display: flex;
     gap: 1em;
-    margin: auto;
     background-color: #0000;
     border: 1px solid #0000;
 }
@@ -282,6 +281,18 @@ ul li a, h1 a, button a{
     transition: all .4s ease-in-out;
     display: flex;
     flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+#innerText::after, #textContent::after, #innerHTML::after{
+    content: '';
+    position: absolute;
+    top: -2em;
+    right: -8em;
+    width: 30%;
+    height: 160%;
+    border-radius: 50%;
+    background: #05a10d;
 }
 .att{
     padding: 1em;
@@ -295,12 +306,8 @@ ul li a, h1 a, button a{
     display: flex;
     flex-direction: row;
     align-items:safe;
-    justify-content:space-between;
+    justify-content:space-around;
     overflow: hidden;
-}
-.attSec .hid{
-    margin-left: 1em;
-    padding-left: 1em;
 }
 .sec{
     padding: .5em;
@@ -317,12 +324,16 @@ ul li a, h1 a, button a{
 .atthid{
     border-top: 1px solid #8a8a8a;
     display: none;
-    transition: all .4s ease-in-out;
     overflow: hidden;
+    transition: all .4s ease-in-out;
 }
 .hid p, .hid h4{
     opacity: 0;
     animation: transitLeft 1s .2s ease-in-out forwards;
+}
+.atthid p, .atthid h4, .atthid img{
+    opacity: 0;
+    animation: transitDown 1s .2s ease-in-out forwards;
 }
 #textContent{
     margin-left: 3em;
@@ -348,7 +359,14 @@ footer {
     font-weight: 200;
     font-family:'Arial Narrow', Arial, sans-serif;
 }
-
+.footer2 form textarea{
+    border: none;
+    outline: none;
+    border-radius: .4em;
+}
+.footer2 form button{
+    color: #22aa29;
+}
 .bottomend{
     text-align: center;
     background: #353434;
@@ -363,5 +381,14 @@ footer {
     }100%{
         opacity: 100%;
        transform: translateX(0);
+    }
+}
+@keyframes transitDown{
+    0%{ 
+        opacity: 0;
+       transform: translateY(-4rem);
+    }100%{
+        opacity: 100%;
+       transform: translateY(0);
     }
 }

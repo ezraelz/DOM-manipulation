@@ -165,7 +165,11 @@ innerH.addEventListener('mouseout', handleLeaveInnerH);
 
 // attributes
 const setAtt = document.querySelector('#setAttribute');
+const getAtt = document.querySelector('#getAttribute');
+const removeAtt = document.querySelector('#removeAttribute');
 const hidAtt = document.querySelector('#setAttribute .atthid');
+const hidgetAtt = document.querySelector('#getAttribute .atthid');
+const hidremAtt = document.querySelector('#removeAttribute .atthid');
 
 const handleHoverSetAtt = ()=> {
    hidAtt.style.display = 'block';
@@ -173,5 +177,26 @@ const handleHoverSetAtt = ()=> {
 const handleLeaveSetAtt = () => {
    hidAtt.style.display = 'none';
 };
+
+const handleHoverGetAtt = ()=> {
+   hidgetAtt.style.display = 'block';
+}
+const handleLeaveGetAtt = () => {
+   hidgetAtt.style.display = 'none';
+};
+
+const handleHoverRemoveAtt = ()=> {
+   hidremAtt.style.display = 'block';
+}
+const handleLeaveRemoveAtt = () => {
+   hidremAtt.style.display = 'none';
+};
+
 setAtt.addEventListener('mouseover', handleHoverSetAtt);
 setAtt.addEventListener('mouseleave', handleLeaveSetAtt)
+
+getAtt.addEventListener('mouseover', handleHoverGetAtt);
+getAtt.addEventListener('mouseleave', handleLeaveGetAtt)
+
+removeAtt.addEventListener('mouseover', handleHoverRemoveAtt);
+removeAtt.addEventListener('mouseleave', handleLeaveRemoveAtt)
