@@ -139,12 +139,12 @@ ul li a, h1 a, button a{
 .tree{
     width: 50%;
     background: #f3fcfbea;
-    padding: 2em;
+    padding: 0em;
     transition: all .5s ease-in-out;
     box-shadow: 0px 0px -13px #919090b6;
     border-radius: .8em;
-    display: none;
-    
+    height: 0em;
+    overflow: hidden;
     cursor: pointer;
 }
 .tree #p2{
@@ -339,7 +339,55 @@ ul li a, h1 a, button a{
     margin-left: 3em;
 }
 #innerHTML{
+  
     margin-left: 6em;
+}
+
+.questions{
+    text-align: start;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 10px #c0c0c0;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 15px;
+}
+.question{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+    margin-left: 20em;
+    font-size: 1.4em;
+    height: 40vh;
+    padding: 2em;
+}
+#timer{
+    position: absolute;
+    top: 4em;
+    left: 12em;
+    padding: 2em;
+    color: #05a10d;
+    font-size: 1.2em;
+    font-weight: 600;
+    box-shadow: 0 0 8px ;
+    border-radius: 8px;
+}
+#prev{
+    position: absolute;
+    top: 5em;
+    left: 4em;
+    padding: .5em;
+    width: 4em;
+}
+#next{
+    position: absolute;
+    top: 5em;
+    right: 4em;
+    padding: .5em;
+    width: 4em;
 }
 footer {
     text-align: center;

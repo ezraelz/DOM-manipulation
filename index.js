@@ -2,12 +2,16 @@ const tree = document.getElementById('tree');
 const treeButton = document.getElementById('treeButton');
 
 const collapse = () => {
-   if (tree.style.display === 'none' && treeButton.textContent === 'Show tree') {
-      tree.style.display = 'block';
+   if (tree.style.height === '0em' && treeButton.textContent === 'Show tree') {
+      tree.style.height = 'auto';
       treeButton.textContent = 'Hide tree';
+      tree.style.padding = '2em';
+      tree.style.transition = 'height 0.5s ease-in-out';
    } else {
-      tree.style.display = 'none';
+      tree.style.height = '0em';
       treeButton.textContent = 'Show tree';
+      tree.style.padding = '0em';
+      tree.style.transition = 'height 0.5s ease-in-out';
    }
 }
 
@@ -200,3 +204,68 @@ getAtt.addEventListener('mouseleave', handleLeaveGetAtt)
 
 removeAtt.addEventListener('mouseover', handleHoverRemoveAtt);
 removeAtt.addEventListener('mouseleave', handleLeaveRemoveAtt)
+
+let questionStack = [
+   {
+      question: '1. What does the DOM stand for? <br> <br>A) Document Object Model <br> B) Data Object Model <br> C) Document Oriented Model <br> D) Dynamic Object Manipulation',
+   },
+   {
+      question: '2. Which method is used to select an element by its ID? <br><br> A) querySelectorAll() <br> B) getElementByClassName() <br> C) getElementById() <br> D) getElementsByTagName()',
+   },
+   {
+      question: `3. What will document.querySelector('.title') select <br><br> A) All elements with class “title” <br> B) The first element with class “title” <br> C) The first element with ID “title” <br> D) No elements`,
+   },
+   {
+      question: '4. Which method returns a live HTMLCollection? <br><br> A) querySelectorAll() <br> B) getElementsByClassName() <br> C) querySelector() <br> D) getElementById()',
+   },
+   {
+      question: '5. How can you change the text inside a <p> element with ID “demo”? <br> <br>A) document.getElementById("demo").text = "Hello"; <br> B) document.getElementById("demo").innerHTML = "Hello"; <br> C) document.getElementById("demo").setHTML = "Hello"; <br> D) document.getElementById("demo").changeText("Hello");',
+   },
+   {
+      question: '6. What is the difference between innerText and innerHTML? <br><br> A) innerText adds HTML tags, innerHTML only adds text <Br> B) innerText gets visible text only, innerHTML can include HTML tags <br> C) Both are identical <br> D) innerText works only with input fields',
+   },
+   {
+      question: '7. How do you change the background color of an element with ID “box”? <br> <br>A) document.getElementById("box").style.bgcolor = "red"; <br> B) document.getElementById("box").backgroundColor = "red"; <br> C) document.getElementById("box").style.backgroundColor = "red"; <br> D) document.getElementById("box").setStyle("backgroundColor", "red");',
+   },
+   {
+      question: '8. document.querySelector("p").style.color = "blue"; <br> <br>A) Changes all paragraphs’ color to blue <br> B) Changes the first paragraph’s color to blue <br> C) Creates a new paragraph in blue <br> D) Removes blue color from all paragraphs',
+   },
+   {
+      question: '9. Which property is used to change the text color of an element using JavaScript? <br> <br>A) textColor <br> B) style.fontColor <br> C) style.color <br> D) color.text',
+   },
+   {
+      question: '10. How can you select all paragraph elements on a webpage? <br><br> A) document.querySelector("p") <br> B) document.getElementById("p") <br> C) document.querySelectorAll("p") <br> D) document.getElementsByClassName("p")',
+   },
+];
+let question = document.querySelector('.question');
+let timer = document.querySelector('#timer');
+let questionIndex = 0;
+let counter = 120;
+
+question.innerHTML = questionStack[questionIndex].question;
+
+let countdown = setInterval(() => {
+   counter--;
+   timer.innerText = counter;
+
+   // When timer reaches 0, move to next question
+   if (counter <= 0) {
+      questionIndex++;
+      counter = 120; // reset counter
+
+      // If there are more questions
+      if (questionIndex < questionStack.length) {
+         question.innerHTML = questionStack[questionIndex].question;
+      } else {
+         // Quiz is finished
+         clearInterval(countdown);
+         question.innerText = '🎉 Quiz Finished!';
+         timer.innerText = '';
+      }
+   }
+}, 1000);
+
+
+
+
+
