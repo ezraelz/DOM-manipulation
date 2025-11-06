@@ -342,16 +342,20 @@ ul li a, h1 a, button a{
   
     margin-left: 6em;
 }
-
+.quiz{
+    padding-top: 1em;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #c0c0c0;
+}
 .questions{
     text-align: start;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0 0 10px #c0c0c0;
-    margin: 2em;
-    padding: 2em;
-    border-radius: 15px;
+    background: #e7e7e7;
+    padding: 1em;
 }
 .question{
     display: flex;
