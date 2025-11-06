@@ -51,7 +51,7 @@ ul li a, h1 a, button a{
     min-height: 60vh;
     padding: 3em;
     padding-top: 9em;
-    background: url('./bg.jpg');
+    background: url('./../public/bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
